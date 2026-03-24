@@ -1,0 +1,203 @@
+---
+/* Loader Component - Initial Opening Transition */
+---
+
+<div class="loader-wrapper" id="pageLoader">
+  <div class="loader-content">
+    <div class="hud-container">
+      <div class="hud-ring ring-1"></div>
+      <div class="hud-ring ring-2"></div>
+      <div class="hud-ring ring-3"></div>
+      <div class="hud-scanner"></div>
+      <div class="hud-logo">
+        <img src="/logo.png" alt="FBC Logo" />
+      </div>
+    </div>
+    
+    <div class="status-box">
+      <div class="glitch-text" data-text="SYSTEM.BOOTING">SYSTEM.BOOTING</div>
+      <div class="progress-info">
+        <span class="progress-node">NODE_01: ACTIVE</span>
+        <span class="progress-node">SYNCING_CORES...</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="scanline"></div>
+</div>
+
+<style>
+  .loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+
+  .loader-wrapper.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+  }
+
+  .loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  /* HUD Elements */
+  .hud-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hud-ring {
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 50%;
+  }
+
+  .ring-1 {
+    width: 200px;
+    height: 200px;
+    border-top-color: var(--cyan);
+    border-bottom-color: var(--cyan);
+    animation: rotate 3s linear infinite;
+    opacity: 0.3;
+  }
+
+  .ring-2 {
+    width: 160px;
+    height: 160px;
+    border-left-color: var(--gold);
+    border-right-color: var(--gold);
+    animation: rotate 2s linear reverse infinite;
+    opacity: 0.5;
+  }
+
+  .ring-3 {
+    width: 120px;
+    height: 120px;
+    border: 1px dashed var(--cyan);
+    animation: rotate 10s linear infinite;
+    opacity: 0.2;
+  }
+
+  .hud-scanner {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    animation: scan 2s ease-in-out infinite;
+    box-shadow: 0 0 15px var(--cyan);
+    opacity: 0.5;
+  }
+
+  .hud-logo {
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+    filter: drop-shadow(0 0 10px var(--cyan-glow));
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hud-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Status Box */
+  .status-box {
+    text-align: center;
+    font-family: var(--font-mono);
+  }
+
+  .glitch-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.3em;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  .progress-info {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    opacity: 0.6;
+  }
+
+  .progress-node {
+    font-size: 0.6rem;
+    color: var(--cyan);
+    letter-spacing: 0.1em;
+  }
+
+  /* Scanline Over */
+  .scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.1) 50%
+    ), linear-gradient(
+      90deg, 
+      rgba(255, 0, 0, 0.03), 
+      rgba(0, 255, 0, 0.01), 
+      rgba(0, 0, 255, 0.03)
+    );
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes scan {
+    0%, 100% { top: 10%; opacity: 0; }
+    50% { top: 90%; opacity: 1; }
+  }
+</style>
+
+<script>
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('pageLoader');
+    if (loader) {
+      setTimeout(() => {
+        loader.classList.add('fade-out');
+        setTimeout(() => {
+          loader.remove();
+        }, 800);
+      }, 2000);
+    }
+  });
+</script>
+

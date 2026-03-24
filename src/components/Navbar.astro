@@ -1,0 +1,360 @@
+---
+/* Navbar - Cyberpunk Glassmorphism */
+---
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">FBC</span>
+      <span class="logo-bracket">]</span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#hero" class="nav-link active">
+        <span class="nav-number">01</span>
+        <span>Home</span>
+      </a>
+      <a href="#about" class="nav-link">
+        <span class="nav-number">02</span>
+        <span>About</span>
+      </a>
+      <a href="#portfolio" class="nav-link">
+        <span class="nav-number">03</span>
+        <span>Portfolio</span>
+      </a>
+      <a href="#contact" class="nav-link">
+        <span class="nav-number">04</span>
+        <span>Contact</span>
+      </a>
+    </div>
+
+    <a href="#" class="nav-cta">
+      <span class="cta-icon">↓</span>
+      Download CV
+    </a>
+
+    <button class="burger" id="burger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <a href="#hero" class="mobile-link" data-close>
+      <span class="mobile-number">01</span>
+      <span class="mobile-text">Home</span>
+    </a>
+    <a href="#about" class="mobile-link" data-close>
+      <span class="mobile-number">02</span>
+      <span class="mobile-text">About</span>
+    </a>
+    <a href="#portfolio" class="mobile-link" data-close>
+      <span class="mobile-number">03</span>
+      <span class="mobile-text">Portfolio</span>
+    </a>
+    <a href="#contact" class="mobile-link" data-close>
+      <span class="mobile-number">04</span>
+      <span class="mobile-text">Contact</span>
+    </a>
+    <a href="#" class="mobile-cta">Download CV</a>
+  </div>
+</div>
+
+<style>
+  /* --- Navbar --- */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 16px 0;
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.08);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.3s ease;
+  }
+  .navbar.hidden {
+    transform: translateY(-100%);
+  }
+  .navbar.scrolled {
+    background: rgba(10, 10, 15, 0.92);
+    padding: 12px 0;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Logo */
+  .nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    transition: all 0.3s ease;
+  }
+  .nav-logo:hover {
+    color: var(--cyan);
+  }
+  .nav-logo:hover .logo-text {
+    animation: glitch-1 0.3s infinite;
+  }
+  .nav-logo:hover .logo-bracket {
+    color: var(--gold);
+    animation: glitch-2 0.3s infinite reverse;
+  }
+  .logo-bracket {
+    color: var(--cyan);
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  .logo-text {
+    letter-spacing: 0.1em;
+  }
+
+  /* Nav Links */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.3s ease;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--cyan);
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--text-primary);
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+  .nav-number {
+    color: var(--cyan);
+    font-size: 0.65rem;
+    opacity: 0.7;
+  }
+
+  /* CTA Button */
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--cyan);
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+  }
+  .nav-cta:hover {
+    background: rgba(0, 240, 255, 0.08);
+    border-color: var(--cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+    color: var(--cyan);
+  }
+  .cta-icon {
+    font-size: 0.9rem;
+  }
+
+  /* Burger */
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 1001;
+  }
+  .burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+  .mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .mobile-menu-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+  .mobile-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+  }
+  .mobile-link:hover {
+    color: var(--text-primary);
+    transform: translateX(8px);
+  }
+  .mobile-number {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--cyan);
+    opacity: 0.5;
+  }
+  .mobile-cta {
+    margin-top: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--cyan);
+    text-decoration: none;
+    padding: 12px 28px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  .mobile-cta:hover {
+    background: rgba(0, 240, 255, 0.08);
+    border-color: var(--cyan);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links,
+    .nav-cta {
+      display: none;
+    }
+    .burger {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  // Auto-hide navbar on scroll
+  let lastScroll = 0;
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    
+    if (currentScroll > 80) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
+    }
+    lastScroll = currentScroll;
+  });
+
+  // Burger menu
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  burger?.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    mobileMenu?.classList.toggle('open');
+    document.body.style.overflow = mobileMenu?.classList.contains('open') ? 'hidden' : '';
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('[data-close]').forEach(link => {
+    link.addEventListener('click', () => {
+      burger?.classList.remove('active');
+      mobileMenu?.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Active link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const htmlSection = section as HTMLElement;
+      const sectionTop = htmlSection.offsetTop - 100;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id') || '';
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,107 @@
+---
+import '../styles/global.css';
+import Loader from '../components/Loader.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Fabio Banyu Cyto — Portfolio",
+  description = "Full Stack Web Developer & Data Scientist portfolio with a cyberpunk futuristic design"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta name="author" content="Fabio Banyu Cyto" />
+  <title>{title}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style is:global>
+    .preserve-color {
+      /* Placeholder for specific components if needed */
+    }
+  </style>
+</head>
+<body>
+    <Loader />
+    <slot />
+
+    <script>
+      // Add JS enabled class
+      document.body.classList.add('js-enabled');
+      
+      // Animate elements once upon scrolling into view
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05 });
+
+      // Ensure we trigger observer after component loads
+      setTimeout(() => {
+        document.querySelectorAll('section, .observe-item').forEach(sec => observer.observe(sec));
+      }, 100);
+
+      // --- 3D Tilt & Reactive Shine Effect ---
+      const initTilt = () => {
+        const cards = document.querySelectorAll('.glass-card');
+        
+        cards.forEach(card => {
+          const htmlCard = card as HTMLElement;
+          
+          htmlCard.addEventListener('mousemove', (e) => {
+            const rect = htmlCard.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const xc = rect.width / 2;
+            const yc = rect.height / 2;
+            
+            const dx = x - xc;
+            const dy = y - yc;
+            
+            // Interaction settings
+            const tiltX = (dy / yc) * -10; // Max 10 deg
+            const tiltY = (dx / xc) * 10;
+            
+            htmlCard.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+            
+            // Dynamic Shadow movement
+            const shadowX = (dx / xc) * -15;
+            const shadowY = (dy / yc) * -15;
+            htmlCard.style.boxShadow = `${shadowX}px ${shadowY + 20}px 50px rgba(0, 240, 255, 0.2), inset 0 0 20px rgba(0, 240, 255, 0.05)`;
+            
+            // Shine effect
+            const px = (x / rect.width) * 100;
+            const py = (y / rect.height) * 100;
+            htmlCard.style.backgroundImage = `radial-gradient(circle at ${px}% ${py}%, rgba(0, 240, 255, 0.08) 0%, transparent 70%), linear-gradient(rgba(10, 10, 20, 0.85), rgba(10, 10, 20, 0.85))`;
+          });
+          
+          htmlCard.addEventListener('mouseleave', () => {
+            htmlCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            htmlCard.style.boxShadow = 'inset 0 0 20px rgba(0, 240, 255, 0.02)';
+            htmlCard.style.backgroundImage = '';
+          });
+        });
+      };
+
+      // Re-initialize when portfolio items might be injected
+      setTimeout(initTilt, 500);
+      
+      // Also listen for a custom event if portfolio re-renders
+      window.addEventListener('portfolio-updated', initTilt);
+    </script>
+  </body>
+</html>

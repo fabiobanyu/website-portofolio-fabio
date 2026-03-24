@@ -1,0 +1,643 @@
+---
+/* Portfolio Section - Projects & Certificates */
+
+const portfolioItems = [
+  // Academic / Certificates
+  { id: 1, title: "NSDC English Debate (2022)", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Awarding Institution: Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI" },
+  { id: 2, title: "Debate Competitions (2022)", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Awarding Institution: Sekolah Mondial and Mondial English Language" },
+  { id: 3, title: "Gammafest IPB Competition (2025)", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Participant in Data Science National Competition" },
+  { id: 4, title: "DataVers UGM Competition (2026)", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Participant in Big Data Challenge National Competition" },
+  { id: 5, title: "Data Science Fundamental Learning Master", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Awarding Institution: Coding Studio (2024)" },
+  { id: 6, title: "Python Fundamental Learning Master", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Awarding Institution: Coding Studio (2024)" },
+  { id: 7, title: "Introduction to Generative AI", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Awarding Institution: Google Cloud (2024)" },
+  { id: 8, title: "Webinar CNC 5.0", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Participant (2024)" },
+  { id: 9, title: "One Step Closer 5.0 with Bank Indonesia GenBI", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Participant (2025)" },
+  { id: 10, title: "Working Abroad (Webinar)", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Prodi Sains Data ITERA (2026)" },
+  { id: 11, title: "ASEAN Data Science Explorers", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Participation Awarding Institution: ASEAN Foundation (2024)" },
+
+  // Non-Academic / Organizations
+  { id: 12, title: "PII Inovasi ITERA", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Staff Magang (Jul - Nov 2025)" },
+  { id: 13, title: "BPA Sains Data '23", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "PJ Akademik Badan Pengurus Angkatan (May 2024 - Present)" },
+  { id: 14, title: "Project Sains Data ITERA", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Ketua Divisi Hubungan Masyarakat (Mar - Jun 2024)" },
+  { id: 15, title: "Sains Data Mengabdi 2024", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Volunteer - Desa Way Galih (Sep 2024)" },
+  { id: 16, title: "HMSD Adyatama ITERA (Staff)", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Staff Research and Development (Jan 2025 - Jan 2026)" },
+  { id: 17, title: "Sains Data Mengabdi 2025", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Ketua Divisi Research and Development - Desa Purwotani (Sep 2025)" },
+  { id: 18, title: "First Gathering Sains Data", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Sekretaris Jenderal (Feb - Aug 2025)" },
+  { id: 19, title: "DateraQuest Competition 1.0", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Ketua Sub-divisi Dashboard Interaktif (Jun - Dec 2025)" },
+  { id: 20, title: "LKMM-TM III ITERA 2025", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Peserta Latihan Keterampilan Manajemen Mahasiswa Tingkat Menengah (Nov 2025)" },
+  { id: 21, title: "LKMM-TD V ITERA 2025", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Peserta Latihan Keterampilan Manajemen Mahasiswa Tingkat Dasar (Apr 2025)" },
+  { id: 22, title: "HMSD Adyatama ITERA (Kadep)", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Kepala Departemen Akademik dan Keprofesian (Feb 2026 - Present)" },
+  { id: 23, title: "Penutor Mata Kuliah Statistika", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Penutor Mata Kuliah Statistika Sains Data (2025)" },
+  { id: 24, title: "Asisten Praktikum PKS 2", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Asisten Praktikum PKS 2 ITERA (Feb - Jun 2025)" },
+  { id: 25, title: "Asisten Praktikum PKS 1", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Asisten Praktikum PKS 1 ITERA (Sep - Nov 2024)" }
+];
+---
+
+<section class="portfolio section" id="portfolio">
+  <div class="container">
+    <!-- Header -->
+    <div class="section-header text-center">
+      <span class="section-label">My Works</span>
+      <h2 class="section-title">Featured <span class="text-cyan">Portfolio</span></h2>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="portfolio-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Academic">Academic</button>
+      <button class="filter-btn" data-filter="Non-Academic">Non-Academic</button>
+      <button class="filter-btn" data-filter="Project">Projects</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="portfolio-grid">
+      {portfolioItems.map((item, i) => (
+        <div class="portfolio-wrapper observe-item filter-item" data-category={item.category} style={`--enter-delay: 0s;`}>
+          <div class="portfolio-item glass-card">
+            <div class="portfolio-img-wrap">
+              <div class="portfolio-overlay">
+                <button class="view-btn" data-modal={item.id}>View Details</button>
+              </div>
+              <!-- Using placeholder div since we don't have images yet. In real app use <img> -->
+              <div class="img-placeholder">
+                <span class="img-text">{item.title.substring(0, 2)}</span>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-category flicker-heavy">{item.category}</span>
+              <h3 class="portfolio-title">{item.title}</h3>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Modal Template -->
+<div class="modal" id="portfolioModal">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content glass-card">
+    <button class="modal-close" aria-label="Close modal">×</button>
+    <div class="modal-body">
+      <div class="modal-img-placeholder" id="modalImg"></div>
+      <div class="modal-info">
+        <span class="modal-category" id="modalCategory">Category</span>
+        <h3 class="modal-title" id="modalTitle">Project Title</h3>
+        <p class="modal-desc" id="modalDesc">Project description goes here...</p>
+      </div>
+    </div>
+    <!-- Modal decorations -->
+    <div class="corner-decoration top-left"></div>
+    <div class="corner-decoration top-right"></div>
+    <div class="corner-decoration bottom-left"></div>
+    <div class="corner-decoration bottom-right"></div>
+  </div>
+</div>
+
+<!-- Pass data to client script -->
+<script is:inline define:vars={{ portfolioItems }}>
+  window.portfolioData = portfolioItems;
+</script>
+
+<style>
+  /* --- Portfolio Section --- */
+  .section-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 600px;
+    margin: 16px auto 0;
+  }
+
+  /* Filters */
+  .portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: transparent;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.05em;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--cyan);
+    color: var(--text-primary);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+  }
+
+  .filter-btn.active {
+    background: rgba(0, 240, 255, 0.1);
+    border-color: var(--cyan);
+    color: var(--cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+  }
+
+  /* Grid */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  /* Card Wrapper for Scroll Transitions */
+  .portfolio-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  }
+  .portfolio-wrapper.in-view {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  }
+  .portfolio-wrapper.hidden {
+    display: none;
+  }
+
+  /* Actual Card */
+  .portfolio-item {
+    padding: 12px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portfolio-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid rgba(0, 240, 255, 0.1);
+  }
+
+  .img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 10, 20, 0.8), rgba(0, 240, 255, 0.05)),
+                repeating-linear-gradient(rgba(0, 240, 255, 0.05) 0 1px, transparent 1px 20px),
+                repeating-linear-gradient(90deg, rgba(0, 240, 255, 0.05) 0 1px, transparent 1px 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+  }
+
+  .img-text {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.05);
+  }
+
+  .portfolio-item:hover .img-placeholder {
+    transform: scale(1.05);
+  }
+
+  /* --- List View --- */
+  .portfolio-grid.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .portfolio-grid.list-view .portfolio-wrapper {
+    width: 100%;
+  }
+  .portfolio-grid.list-view .portfolio-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+  }
+  .portfolio-grid.list-view .portfolio-img-wrap {
+    width: 80px;
+    height: 80px;
+    aspect-ratio: 1/1;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    border-radius: 8px;
+  }
+  .portfolio-grid.list-view .portfolio-title {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    white-space: normal;
+  }
+  .portfolio-grid.list-view .img-text {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 600px) {
+    .portfolio-grid.list-view .portfolio-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  }
+
+  /* --- Overlay & Button --- */
+  .portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+
+  .portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+  }
+
+  .view-btn {
+    background: var(--cyan);
+    color: var(--bg-primary);
+    border: none;
+    padding: 10px 24px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .portfolio-item:hover .view-btn {
+    transform: translateY(0);
+  }
+
+  .view-btn:hover {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+    background: #fff;
+    color: var(--bg-primary);
+  }
+
+  /* Content */
+  .portfolio-category {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .portfolio-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  /* --- Modal --- */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .modal.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 8, 0.85);
+    backdrop-filter: blur(10px);
+  }
+
+  .modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    z-index: 10;
+    padding: 0;
+    overflow: hidden;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .modal.active .modal-content {
+    transform: translateY(0) scale(1);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    color: var(--cyan);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s ease;
+  }
+  .modal-close:hover {
+    background: var(--cyan);
+    color: var(--bg-primary);
+    transform: rotate(90deg);
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-img-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, rgba(10, 10, 20, 0.8), rgba(0, 240, 255, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+  }
+  .modal-img-placeholder::after {
+    content: 'IMAGE PREVIEW';
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.2em;
+  }
+
+  .modal-info {
+    padding: 32px;
+  }
+
+  .modal-category {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(223, 201, 101, 0.1);
+    border: 1px solid rgba(223, 201, 101, 0.3);
+    color: var(--gold);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  .modal-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+  }
+
+  .modal-desc {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .modal-info {
+      padding: 24px;
+    }
+    .modal-title {
+      font-size: 1.4rem;
+    }
+    .modal-img-placeholder {
+      aspect-ratio: 4/3;
+    }
+  }
+</style>
+
+<script>
+  /**
+   * Updates the visibility of all portfolio items based on the active filter.
+   */
+  function updatePortfolioVisibility() {
+    const activeBtn = document.querySelector('.filter-btn.active');
+    if (!activeBtn) return;
+
+    const filterValue = (activeBtn.getAttribute('data-filter') || 'all').toLowerCase();
+    const items = document.querySelectorAll('.filter-item');
+    const parentGrid = document.querySelector('.portfolio-grid');
+
+    // Toggle list-view class for Projects tab
+    if (parentGrid) {
+      if (filterValue === 'project') {
+        parentGrid.classList.add('list-view');
+      } else {
+        parentGrid.classList.remove('list-view');
+      }
+    }
+
+    items.forEach(item => {
+      const htmlItem = item as HTMLElement;
+      const cat = (htmlItem.getAttribute('data-category') || '').toLowerCase();
+      
+      let shouldShow = false;
+      if (filterValue === 'all') {
+        // Show EVERYTHING in the All tab (including Projects)
+        shouldShow = true;
+      } else {
+        // Strict category match
+        // Projects are explicitly excluded unless the tab is 'all' or 'project'
+        shouldShow = (cat === filterValue);
+      }
+
+      if (shouldShow) {
+        htmlItem.classList.remove('hidden');
+        setTimeout(() => {
+          htmlItem.classList.add('in-view');
+        }, 10);
+      } else {
+        htmlItem.classList.add('hidden');
+        htmlItem.classList.remove('in-view');
+      }
+    });
+  }
+
+  // Handle filter button clicks via delegation
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const btn = target.closest('.filter-btn');
+    if (!btn) return;
+
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    updatePortfolioVisibility();
+  });
+
+  // Intersection Observer for scroll animations
+  const portfolioObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('hidden')) {
+        entry.target.classList.add('in-view');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  // Observe items
+  function observeAll() {
+    document.querySelectorAll('.filter-item').forEach(item => {
+      portfolioObserver.observe(item);
+    });
+  }
+
+  // Initial observation
+  observeAll();
+
+  // Load GitHub Projects dynamically
+  async function loadGithubProjects() {
+    try {
+      const parentGrid = document.querySelector('.portfolio-grid');
+      if (!parentGrid) return;
+      
+      const pinnedNames = [
+        'Tugas-AI-Classifying-High-vs-Low-Profit-Orders-on-Superstore-Dataset-using-3-Machine-Learn',
+        'Fabio-Banyu-Cyto',
+        'TUGAS-DATA-MINING-Customer-Personality-Analysis-Segmentation-Using-DBSCAN-Clustering',
+        'TUGAS-BESAR-KOMSTAT-RC-KELOMPOK-1-Vidyastana',
+        'rekrutmen-bph-dashboard-MIKFES-2026',
+        'DataVers-Competition-Lightgbm-Model'
+      ];
+
+      const res = await fetch('https://api.github.com/users/fabiobanyu/repos?sort=updated&per_page=30');
+      if (!res.ok) return;
+      const allRepos = await res.json();
+
+      const pinnedRepos: any[] = [];
+      const otherRepos: any[] = [];
+
+      pinnedNames.forEach(name => {
+        const repo = allRepos.find((r: any) => r.name === name);
+        if (repo) pinnedRepos.push(repo);
+      });
+
+      allRepos.forEach((repo: any) => {
+        if (!pinnedNames.includes(repo.name)) {
+          otherRepos.push(repo);
+        }
+      });
+
+      const repos = [...pinnedRepos, ...otherRepos];
+      
+      repos.forEach(repo => {
+        const wrap = document.createElement('div');
+        // Initial state: hidden (will be updated by updatePortfolioVisibility)
+        wrap.className = 'portfolio-wrapper filter-item';
+        wrap.setAttribute('data-category', 'Project');
+        
+        wrap.innerHTML = `
+          <div class="portfolio-item glass-card" style="height: 100%; display: flex; flex-direction: column;">
+            <div class="portfolio-img-wrap">
+              <div class="portfolio-overlay">
+                <a href="${repo.html_url}" target="_blank" class="view-btn" style="text-decoration:none;">View GitHub</a>
+              </div>
+              <div class="img-placeholder" style="background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(0, 240, 255, 0.1)); display: flex; align-items: center; justify-content: center; height: 100%;">
+                <span class="img-text" style="font-family: var(--font-heading); font-size: 3rem; font-weight: 800; color: rgba(255, 255, 255, 0.05);">&lt;/&gt;</span>
+              </div>
+            </div>
+            <div class="portfolio-content" style="flex-grow: 1; display: flex; flex-direction: column;">
+              <span class="portfolio-category flicker-heavy">Project</span>
+              <h3 class="portfolio-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${repo.name}">${repo.name}</h3>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 8px; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">${repo.description || 'No description provided by the author.'}</p>
+            </div>
+          </div>
+        `;
+        parentGrid.appendChild(wrap);
+        portfolioObserver.observe(wrap);
+      });
+
+      // Update everything once projects are added
+      updatePortfolioVisibility();
+    } catch(err) {
+      console.error('Failed to load GitHub projects', err);
+    }
+  }
+  
+  loadGithubProjects();
+
+  // Modal logic
+  const modal = document.getElementById('portfolioModal');
+  const modalBackdrop = document.querySelector('.modal-backdrop');
+  const closeBtn = document.querySelector('.modal-close');
+
+  const modalTitle = document.getElementById('modalTitle');
+  const modalCategory = document.getElementById('modalCategory');
+  const modalDesc = document.getElementById('modalDesc');
+
+  function openModal(id: number) {
+    const pData = (window as any).portfolioData || [];
+    const item = pData.find((p: any) => p.id === id);
+    if (!item || !modal) return;
+
+    if (modalTitle) modalTitle.textContent = item.title;
+    if (modalCategory) modalCategory.textContent = item.category;
+    if (modalDesc) modalDesc.textContent = item.desc;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Delegation for view details button (since they might be dynamic too, though currently only certificates have them)
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const btn = target.closest('.view-btn');
+    if (!btn) return;
+    
+    const idAttr = btn.getAttribute('data-modal');
+    if (idAttr) {
+      const id = parseInt(idAttr, 10);
+      openModal(id);
+    }
+  });
+
+  closeBtn?.addEventListener('click', closeModal);
+  modalBackdrop?.addEventListener('click', closeModal);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>

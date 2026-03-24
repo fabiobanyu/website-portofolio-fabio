@@ -1,0 +1,237 @@
+---
+/* Footer Section - Social Links & Copyright */
+const year = new Date().getFullYear();
+---
+
+<footer class="footer section" id="contact">
+  <div class="footer-glow"></div>
+  
+  <div class="container">
+    <div class="footer-content">
+      <!-- Main Brand -->
+      <div class="footer-brand">
+        <a href="#hero" class="footer-logo">
+          <span class="logo-bracket">[</span>
+          <span class="logo-text">FBC</span>
+          <span class="logo-bracket">]</span>
+        </a>
+        <p class="footer-desc">
+          Building digital products, brands, and experience with a futuristic touch.
+        </p>
+      </div>
+
+      <!-- Quick Nav -->
+      <div class="footer-links">
+        <h4 class="footer-title">Navigation</h4>
+        <ul>
+          <li><a href="#hero" class="footer-link">Home</a></li>
+          <li><a href="#about" class="footer-link">About</a></li>
+          <li><a href="#portfolio" class="footer-link">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <!-- Socials -->
+      <div class="footer-socials">
+        <h4 class="footer-title">Connect</h4>
+        <div class="social-grid">
+          <a href="https://www.youtube.com/@fbc_maestro" target="_blank" class="social-icon" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+          </a>
+          <a href="https://www.instagram.com/biyokcb/" target="_blank" class="social-icon" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1GmLqfFpiS/" target="_blank" class="social-icon" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="mailto:fabiocyto74@gmail.com?subject=Portfolio%20Inquiry" class="social-icon" aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; {year} <span class="text-cyan">Fabio Banyu Cyto</span>. All rights reserved.
+      </p>
+      <div class="footer-sys">
+        <span class="sys-dot"></span>
+        <span class="sys-text">SYSTEM.ONLINE</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: relative;
+    padding: 80px 0 30px;
+    background: var(--bg-primary);
+    border-top: 1px solid rgba(0, 240, 255, 0.1);
+    overflow: hidden;
+  }
+
+  .footer-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    box-shadow: 0 0 30px 2px var(--cyan);
+    opacity: 0.3;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  .footer-brand {
+    max-width: 300px;
+  }
+
+  .footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 16px;
+  }
+
+  .logo-bracket {
+    color: var(--cyan);
+    font-weight: 400;
+  }
+
+  .footer-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .footer-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer-link::before {
+    content: '→';
+    margin-right: 8px;
+    font-size: 0.8rem;
+    color: var(--cyan);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: var(--cyan);
+  }
+
+  .footer-link:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .social-grid {
+    display: flex;
+    gap: 16px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(0, 240, 255, 0.05);
+    border: 1px solid rgba(0, 240, 255, 0.1);
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .social-icon:hover {
+    color: var(--cyan);
+    border-color: var(--cyan);
+    background: rgba(0, 240, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 240, 255, 0.15);
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .copyright {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
+
+  .footer-sys {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sys-dot {
+    width: 6px;
+    height: 6px;
+    background: #00ff88;
+    border-radius: 50%;
+    animation: blink 2s ease-in-out infinite;
+  }
+
+  .sys-text {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: #00ff88;
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+  }
+</style>
