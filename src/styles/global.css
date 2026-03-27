@@ -15,22 +15,22 @@
   --bg-card: rgba(15, 15, 25, 0.8);
   --bg-glass: rgba(10, 10, 20, 0.6);
 
-  --cyan: #00f0ff;
-  --cyan-dim: rgba(0, 240, 255, 0.15);
-  --cyan-glow: rgba(0, 240, 255, 0.4);
-  --gold: #dfc965;
-  --gold-dim: rgba(223, 201, 101, 0.15);
-  --gold-glow: rgba(223, 201, 101, 0.4);
+  --cyan: #00ffff;
+  --cyan-dim: rgba(0, 255, 255, 0.2);
+  --cyan-glow: rgba(0, 255, 255, 0.5);
+  --gold: #f0d860;
+  --gold-dim: rgba(240, 216, 96, 0.2);
+  --gold-glow: rgba(240, 216, 96, 0.5);
   --magenta: #ff00aa;
   --green: #00ff88;
   --red: #ff3366;
 
-  --text-primary: #e8e8f0;
-  --text-secondary: #8888aa;
-  --text-dim: #555570;
+  --text-primary: #eeeef5;
+  --text-secondary: #9999bb;
+  --text-dim: #666680;
 
-  --border-color: rgba(0, 240, 255, 0.1);
-  --border-glow: rgba(0, 240, 255, 0.3);
+  --border-color: rgba(0, 255, 255, 0.12);
+  --border-glow: rgba(0, 255, 255, 0.35);
 
   /* Typography */
   --font-heading: 'Orbitron', sans-serif;

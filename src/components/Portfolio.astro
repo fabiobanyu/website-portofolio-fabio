@@ -3,33 +3,33 @@
 
 const portfolioItems = [
   // Academic / Certificates
-  { id: 1, title: "NSDC English Debate (2022)", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Awarding Institution: Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI" },
-  { id: 2, title: "Debate Competitions (2022)", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Awarding Institution: Sekolah Mondial and Mondial English Language" },
-  { id: 3, title: "Gammafest IPB Competition (2025)", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Participant in Data Science National Competition" },
-  { id: 4, title: "DataVers UGM Competition (2026)", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Participant in Big Data Challenge National Competition" },
-  { id: 5, title: "Data Science Fundamental Learning Master", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Awarding Institution: Coding Studio (2024)" },
-  { id: 6, title: "Python Fundamental Learning Master", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Awarding Institution: Coding Studio (2024)" },
-  { id: 7, title: "Introduction to Generative AI", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Awarding Institution: Google Cloud (2024)" },
-  { id: 8, title: "Webinar CNC 5.0", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Participant (2024)" },
-  { id: 9, title: "One Step Closer 5.0 with Bank Indonesia GenBI", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Participant (2025)" },
-  { id: 10, title: "Working Abroad (Webinar)", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Prodi Sains Data ITERA (2026)" },
-  { id: 11, title: "ASEAN Data Science Explorers", category: "Academic", image: "/placeholder-portfolio.jpg", desc: "Participation Awarding Institution: ASEAN Foundation (2024)" },
+  { id: 1, title: "NSDC English Debate (2022)", category: "Academic", image: "", desc: "Awarding Institution: Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI" },
+  { id: 2, title: "Debate Competitions (2022)", category: "Academic", image: "/certificates/cert-debate.jpg", desc: "Awarding Institution: Sekolah Mondial and Mondial English Language" },
+  { id: 3, title: "Gammafest IPB Competition (2025)", category: "Academic", image: "/certificates/cert-gammafest.jpg", desc: "Participant in Data Science National Competition" },
+  { id: 4, title: "DataVers UGM Competition (2026)", category: "Academic", image: "/certificates/cert-datavers.jpg", desc: "Participant in Big Data Challenge National Competition" },
+  { id: 5, title: "Data Science Fundamental Learning Master", category: "Academic", image: "/certificates/cert-ds-fundamental.jpg", desc: "Awarding Institution: Coding Studio (2024)" },
+  { id: 6, title: "Python Fundamental Learning Master", category: "Academic", image: "/certificates/cert-python-fundamental.jpg", desc: "Awarding Institution: Coding Studio (2024)" },
+  { id: 7, title: "Google Cloud Training", category: "Academic", image: "/certificates/cert-google-cloud.jpg", desc: "Awarding Institution: Google Cloud (2024)" },
+  { id: 8, title: "Webinar CNC 5.0", category: "Academic", image: "/certificates/cert-cnc.jpg", desc: "Participant (2024)" },
+  { id: 9, title: "One Step Closer 5.0 with Bank Indonesia GenBI", category: "Academic", image: "", desc: "Participant (2025)" },
+  { id: 10, title: "Working Abroad (Webinar)", category: "Academic", image: "", desc: "Prodi Sains Data ITERA (2026)" },
+  { id: 11, title: "ASEAN Data Science Explorers", category: "Academic", image: "/certificates/cert-asean-ds.jpg", desc: "Participation Awarding Institution: ASEAN Foundation (2024)" },
 
   // Non-Academic / Organizations
-  { id: 12, title: "PII Inovasi ITERA", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Staff Magang (Jul - Nov 2025)" },
-  { id: 13, title: "BPA Sains Data '23", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "PJ Akademik Badan Pengurus Angkatan (May 2024 - Present)" },
-  { id: 14, title: "Project Sains Data ITERA", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Ketua Divisi Hubungan Masyarakat (Mar - Jun 2024)" },
-  { id: 15, title: "Sains Data Mengabdi 2024", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Volunteer - Desa Way Galih (Sep 2024)" },
-  { id: 16, title: "HMSD Adyatama ITERA (Staff)", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Staff Research and Development (Jan 2025 - Jan 2026)" },
-  { id: 17, title: "Sains Data Mengabdi 2025", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Ketua Divisi Research and Development - Desa Purwotani (Sep 2025)" },
-  { id: 18, title: "First Gathering Sains Data", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Sekretaris Jenderal (Feb - Aug 2025)" },
-  { id: 19, title: "DateraQuest Competition 1.0", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Ketua Sub-divisi Dashboard Interaktif (Jun - Dec 2025)" },
-  { id: 20, title: "LKMM-TM III ITERA 2025", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Peserta Latihan Keterampilan Manajemen Mahasiswa Tingkat Menengah (Nov 2025)" },
-  { id: 21, title: "LKMM-TD V ITERA 2025", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Peserta Latihan Keterampilan Manajemen Mahasiswa Tingkat Dasar (Apr 2025)" },
-  { id: 22, title: "HMSD Adyatama ITERA (Kadep)", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Kepala Departemen Akademik dan Keprofesian (Feb 2026 - Present)" },
-  { id: 23, title: "Penutor Mata Kuliah Statistika", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Penutor Mata Kuliah Statistika Sains Data (2025)" },
-  { id: 24, title: "Asisten Praktikum PKS 2", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Asisten Praktikum PKS 2 ITERA (Feb - Jun 2025)" },
-  { id: 25, title: "Asisten Praktikum PKS 1", category: "Non-Academic", image: "/placeholder-portfolio.jpg", desc: "Asisten Praktikum PKS 1 ITERA (Sep - Nov 2024)" }
+  { id: 12, title: "PII Inovasi ITERA", category: "Non-Academic", image: "", desc: "Staff Magang (Jul - Nov 2025)" },
+  { id: 13, title: "BPA Sains Data '23", category: "Non-Academic", image: "", desc: "PJ Akademik Badan Pengurus Angkatan (May 2024 - Present)" },
+  { id: 14, title: "Project Sains Data ITERA", category: "Non-Academic", image: "", desc: "Ketua Divisi Hubungan Masyarakat (Mar - Jun 2024)" },
+  { id: 15, title: "Sains Data Mengabdi 2024", category: "Non-Academic", image: "/certificates/cert-sdm-2024.jpg", desc: "Volunteer - Desa Way Galih (Sep 2024)" },
+  { id: 16, title: "HMSD Adyatama ITERA (Staff)", category: "Non-Academic", image: "", desc: "Staff Research and Development (Jan 2025 - Jan 2026)" },
+  { id: 17, title: "Sains Data Mengabdi 2025", category: "Non-Academic", image: "/certificates/cert-sdm-2025.jpg", desc: "Ketua Divisi Research and Development - Desa Purwotani (Sep 2025)" },
+  { id: 18, title: "First Gathering Sains Data", category: "Non-Academic", image: "", desc: "Sekretaris Jenderal (Feb - Aug 2025)" },
+  { id: 19, title: "DateraQuest Competition 1.0", category: "Non-Academic", image: "", desc: "Ketua Sub-divisi Dashboard Interaktif (Jun - Dec 2025)" },
+  { id: 20, title: "LKMM-TM III ITERA 2025", category: "Non-Academic", image: "", desc: "Peserta Latihan Keterampilan Manajemen Mahasiswa Tingkat Menengah (Nov 2025)" },
+  { id: 21, title: "LKMM-TD V ITERA 2025", category: "Non-Academic", image: "", desc: "Peserta Latihan Keterampilan Manajemen Mahasiswa Tingkat Dasar (Apr 2025)" },
+  { id: 22, title: "HMSD Adyatama ITERA (Kadep)", category: "Non-Academic", image: "", desc: "Kepala Departemen Akademik dan Keprofesian (Feb 2026 - Present)" },
+  { id: 23, title: "Sertifikat DAMPAK Pengajar SSD", category: "Non-Academic", image: "/certificates/cert-dampak-ssd.jpg", desc: "Pengajar Sains Data (2025)" },
+  { id: 24, title: "Asisten Praktikum PKS 2", category: "Non-Academic", image: "/certificates/cert-pks2.jpg", desc: "Asisten Praktikum PKS 2 ITERA (Feb - Jun 2025)" },
+  { id: 25, title: "Asisten Praktikum PKS 1", category: "Non-Academic", image: "/certificates/cert-pks1.jpg", desc: "Asisten Praktikum PKS 1 ITERA (Sep - Nov 2024)" }
 ];
 ---
 
@@ -58,10 +58,20 @@ const portfolioItems = [
               <div class="portfolio-overlay">
                 <button class="view-btn" data-modal={item.id}>View Details</button>
               </div>
-              <!-- Using placeholder div since we don't have images yet. In real app use <img> -->
-              <div class="img-placeholder">
-                <span class="img-text">{item.title.substring(0, 2)}</span>
-              </div>
+              {item.image ? (
+                <img src={item.image} alt={item.title} class="portfolio-actual-img" loading="lazy" />
+              ) : (
+                <div class={`img-placeholder placeholder-${item.category.toLowerCase().replace('-', '')}`}>
+                  <div class="placeholder-icon">
+                    {item.category === 'Academic' ? (
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    ) : (
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    )}
+                  </div>
+                  <span class="placeholder-title">{item.title}</span>
+                </div>
+              )}
             </div>
             <div class="portfolio-content">
               <span class="portfolio-category flicker-heavy">{item.category}</span>
@@ -80,7 +90,10 @@ const portfolioItems = [
   <div class="modal-content glass-card">
     <button class="modal-close" aria-label="Close modal">×</button>
     <div class="modal-body">
-      <div class="modal-img-placeholder" id="modalImg"></div>
+      <div class="modal-img-container" id="modalImgContainer">
+        <img class="modal-actual-img" id="modalImg" src="" alt="" style="display:none;" />
+        <div class="modal-img-placeholder" id="modalImgPlaceholder"></div>
+      </div>
       <div class="modal-info">
         <span class="modal-category" id="modalCategory">Category</span>
         <h3 class="modal-title" id="modalTitle">Project Title</h3>
@@ -187,13 +200,56 @@ const portfolioItems = [
   .img-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(10, 10, 20, 0.8), rgba(0, 240, 255, 0.05)),
-                repeating-linear-gradient(rgba(0, 240, 255, 0.05) 0 1px, transparent 1px 20px),
-                repeating-linear-gradient(90deg, rgba(0, 240, 255, 0.05) 0 1px, transparent 1px 20px);
+    background: linear-gradient(135deg, rgba(10, 10, 20, 0.95), rgba(0, 255, 255, 0.08)),
+                repeating-linear-gradient(rgba(0, 255, 255, 0.05) 0 1px, transparent 1px 20px),
+                repeating-linear-gradient(90deg, rgba(0, 255, 255, 0.05) 0 1px, transparent 1px 20px);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 12px;
+    padding: 20px;
     transition: transform 0.5s ease;
+  }
+
+  .placeholder-academic {
+    background: linear-gradient(135deg, rgba(8, 10, 25, 0.95), rgba(0, 255, 255, 0.1)),
+                repeating-linear-gradient(rgba(0, 255, 255, 0.04) 0 1px, transparent 1px 25px),
+                repeating-linear-gradient(90deg, rgba(0, 255, 255, 0.04) 0 1px, transparent 1px 25px);
+  }
+  .placeholder-academic .placeholder-icon {
+    color: var(--cyan);
+    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.3));
+  }
+
+  .placeholder-nonacademic {
+    background: linear-gradient(135deg, rgba(15, 12, 8, 0.95), rgba(240, 216, 96, 0.08)),
+                repeating-linear-gradient(rgba(240, 216, 96, 0.04) 0 1px, transparent 1px 25px),
+                repeating-linear-gradient(90deg, rgba(240, 216, 96, 0.04) 0 1px, transparent 1px 25px);
+  }
+  .placeholder-nonacademic .placeholder-icon {
+    color: var(--gold);
+    filter: drop-shadow(0 0 8px rgba(240, 216, 96, 0.3));
+  }
+
+  .placeholder-icon {
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .portfolio-item:hover .placeholder-icon {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .placeholder-title {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    text-align: center;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    max-width: 80%;
+    opacity: 0.6;
   }
 
   .img-text {
@@ -204,6 +260,17 @@ const portfolioItems = [
   }
 
   .portfolio-item:hover .img-placeholder {
+    transform: scale(1.05);
+  }
+
+  /* Actual Certificate Images */
+  .portfolio-actual-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .portfolio-item:hover .portfolio-actual-img {
     transform: scale(1.05);
   }
 
@@ -383,6 +450,19 @@ const portfolioItems = [
     flex-direction: column;
   }
 
+  .modal-img-container {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+  }
+
+  .modal-actual-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    background: rgba(10, 10, 20, 0.9);
+  }
+
   .modal-img-placeholder {
     width: 100%;
     aspect-ratio: 16/9;
@@ -390,7 +470,6 @@ const portfolioItems = [
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
   }
   .modal-img-placeholder::after {
     content: 'IMAGE PREVIEW';
@@ -533,10 +612,14 @@ const portfolioItems = [
         'TUGAS-DATA-MINING-Customer-Personality-Analysis-Segmentation-Using-DBSCAN-Clustering',
         'TUGAS-BESAR-KOMSTAT-RC-KELOMPOK-1-Vidyastana',
         'rekrutmen-bph-dashboard-MIKFES-2026',
-        'DataVers-Competition-Lightgbm-Model'
+        'DataVers-Competition-Lightgbm-Model',
+        'website-portofolio-fabio',
+        'kalkulator-nilai-sains-data-smt-5',
+        'Tugas-Besar-Alpro-SSD-RND',
+        'Tugas-Tugas-kuliah'
       ];
 
-      const res = await fetch('https://api.github.com/users/fabiobanyu/repos?sort=updated&per_page=30');
+      const res = await fetch('https://api.github.com/users/fabiobanyu/repos?sort=updated&per_page=100');
       if (!res.ok) return;
       const allRepos = await res.json();
 
@@ -609,6 +692,20 @@ const portfolioItems = [
     if (modalTitle) modalTitle.textContent = item.title;
     if (modalCategory) modalCategory.textContent = item.category;
     if (modalDesc) modalDesc.textContent = item.desc;
+
+    // Show actual image or placeholder
+    const modalImg = document.getElementById('modalImg') as HTMLImageElement;
+    const modalPlaceholder = document.getElementById('modalImgPlaceholder') as HTMLElement;
+    
+    if (item.image && modalImg && modalPlaceholder) {
+      modalImg.src = item.image;
+      modalImg.alt = item.title;
+      modalImg.style.display = 'block';
+      modalPlaceholder.style.display = 'none';
+    } else if (modalImg && modalPlaceholder) {
+      modalImg.style.display = 'none';
+      modalPlaceholder.style.display = 'flex';
+    }
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';

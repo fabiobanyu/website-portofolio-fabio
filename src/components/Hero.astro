@@ -28,8 +28,10 @@
       <!-- Typing Role -->
       <div class="hero-role">
         <span class="role-bracket">&lt;</span>
-        <span class="role-text" id="roleText"></span>
-        <span class="role-cursor">|</span>
+        <span class="role-inner">
+          <span class="role-text" id="roleText"></span>
+          <span class="role-cursor">|</span>
+        </span>
         <span class="role-bracket">&gt;</span>
       </div>
 
@@ -46,7 +48,7 @@
           <span class="btn-text">View Projects</span>
           <span class="btn-arrow">→</span>
         </a>
-        <a href="#contact" class="btn-secondary glow-hover">
+        <a href="https://wa.me/6285769715375?text=Halo%20Fabio%2C%20saya%20tertarik%20dengan%20portfolio%20kamu!" class="btn-secondary glow-hover" target="_blank">
           <span class="btn-text">Contact Me</span>
         </a>
       </div>
@@ -304,26 +306,35 @@
   /* Role */
   .hero-role {
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: center;
     align-items: center;
     gap: 4px;
     font-family: var(--font-mono);
     font-size: 0.9rem;
-    margin: 0 auto 20px; /* Center with margin */
+    margin: 0 auto 20px;
     color: var(--text-secondary);
     width: fit-content;
   }
   .role-bracket {
     color: var(--text-dim);
+    flex-shrink: 0;
+  }
+  .role-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
   }
   .role-text {
     color: var(--gold);
-    min-width: 250px;
+    text-align: center;
+    white-space: nowrap;
   }
   .role-cursor {
     color: var(--cyan);
     animation: blink 0.8s step-end infinite;
     font-weight: 300;
+    flex-shrink: 0;
   }
 
   /* Description */
@@ -459,8 +470,12 @@
     border-radius: 12px;
     z-index: 2;
     overflow: hidden; /* Keep the photo inside */
-    border: 1px solid rgba(0, 240, 255, 0.2);
-    box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);
+    border: 1px solid rgba(0, 255, 255, 0.35);
+    box-shadow: 
+      0 0 30px rgba(0, 255, 255, 0.25),
+      0 0 60px rgba(0, 255, 255, 0.15),
+      0 0 100px rgba(0, 255, 255, 0.08),
+      inset 0 0 30px rgba(0, 255, 255, 0.05);
   }
 
   /* Refined Soft Oval Portal - Moved to wrapper for unclipped glow */
@@ -470,19 +485,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 140%;
-    height: 120%; /* Large Oval silhouette */
+    width: 150%;
+    height: 130%;
     background: radial-gradient(
       ellipse at center,
-      rgba(0, 240, 255, 0.35) 0%,
-      rgba(0, 240, 255, 0.08) 45%,
+      rgba(0, 255, 255, 0.45) 0%,
+      rgba(0, 255, 255, 0.12) 45%,
       transparent 75%
     );
     border-radius: 50%;
-    z-index: 1; /* Behind the frame */
+    z-index: 1;
     filter: blur(25px);
     animation: portal-aura 6s ease-in-out infinite;
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
   .photo-glow {
